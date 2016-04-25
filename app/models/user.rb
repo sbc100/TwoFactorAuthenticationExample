@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_one_time_password
 
-  def send_two_factor_authentication_code
-    puts ">>>>>>>>>>>>>>> otp_secret_key: #{otp_secret_key}, otp_code: #{otp_code}"
+  def send_two_factor_authentication_code(code)
+    puts ">>>>>>>>>>>>>>> code: #{code}"
   end
 
   def need_two_factor_authentication?(request)
