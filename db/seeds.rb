@@ -10,7 +10,7 @@ default_otp_secret = 'aabcdefabcdefabc'
 
 %w(dmitrii.golub@gmail.com test@test.com).each do |email|
   unless User.where(email: email).exists?
-    puts "Creates #{email}, with password: 123456678 and otp_secret_key: #{default_otp_secret}"
+    puts "Creates #{email}, with password: 12345678 and otp_secret_key: #{default_otp_secret}"
     User.create! email: email, password: '12345678', password_confirmation: '12345678', otp_secret_key: default_otp_secret
   end
 end
