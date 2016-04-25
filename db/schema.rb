@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160422235545) do
     t.integer  "second_factor_attempts_count", default: 0
     t.string   "direct_otp"
     t.datetime "direct_otp_expires_at"
+    t.string   "backup_codes"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
