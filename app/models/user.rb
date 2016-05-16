@@ -6,10 +6,10 @@ class User < ActiveRecord::Base
   has_one_time_password
 
   def send_two_factor_authentication_code
-    puts ">>>>>>>>>>>>>>> otp_secret_key: #{otp_secret_key}, otp_code: #{otp_code}"
+    puts ">>>>>>>>>>>>>>> code: #{otp_code}"
   end
 
   def need_two_factor_authentication?(request)
-    not otp_secret_key.nil?
+    true
   end
 end

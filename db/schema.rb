@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140311114503) do
+ActiveRecord::Schema.define(version: 20160422235545) do
 
   create_table "test_models", force: true do |t|
     t.datetime "created_at"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20140311114503) do
     t.datetime "updated_at"
     t.string   "otp_secret_key"
     t.integer  "second_factor_attempts_count", default: 0
+    t.string   "direct_otp"
+    t.datetime "direct_otp_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
